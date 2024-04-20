@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block desc %}{% endblock desc %}
+{% block keywords %}{% endblock keywords %}
+{% block title %}{% endblock title %}
+
+{% block content %}
+<h2 class="headline">Форма ввода заявки</h2>
+
+<form method="POST" class="postform" enctype="multipart/form-data">
+	{% csrf_token %}
+	{{  form }}
+
+	<button class="submbutton" type="submit"> Отправить </button>
+</form>
+<div>
+	<p class="error">{{ errormes }}</p>	
+</div>
+
+{% endblock content %}

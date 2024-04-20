@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block desc %}{% endblock desc %}
+{% block keywords %}{% endblock keywords %}
+{% block title %}{% endblock title %}
+
+{% block content %}
+  <h2 class="headline">Заявки в техподдержку</h2>
+  <div class="table">
+
+    <div class="row header blue">
+      <div class="cell tdate cent">
+        Время обращения
+      </div>      
+
+      <div class="cell cent">
+        Клиент
+      </div>
+
+      <div class="cell cent">
+        Текст обращения
+      </div>
+
+      <div class="cell cent">
+        Категория
+      </div>
+
+      <div class="cell cent">
+        Приоритет
+      </div>
+
+      <div class="cell cent">
+        Сотрудник
+      </div>
+    </div>
+
+
+
+  {% for ticket in tikets %}
+    <div class="row">      
+      <div class="cell tdate">
+        {{ ticket.tdate }}
+      </div>
+
+      <div class="cell">
+        {{ ticket.client }}
+      </div>
+
+      <div class="cell">
+        {{ ticket.text_ticket }}
+      </div>
+
+      <div class="cell">
+        {{ ticket.category }}
+      </div>
+
+      <div class="cell cent">
+        {{ ticket.priority }}
+      </div>
+
+      <div class="cell">
+        {{ ticket.employee }}
+      </div>
+
+    </div>
+ 
+
+  {% endfor %}
+        
+  </div>
+
+  <div class="menu_wrap">
+    <div class="menu">
+      <a href="/" title="На главную"> На главную</a>        
+    </div>
+  </div>
+{% endblock content %}

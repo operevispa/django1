@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="{% block desc %}{% endblock desc %}">
+    <meta name="keywords" content="{% block keywords %}{% endblock keywords %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <title>{% block title %}Тикет система{% endblock title %}</title>
+</head>
+<body>
+    <div class="main">
+        <div class="wrapper">
+            {% block content %}{% endblock content %}
+        </div>
+    </div>
+</body>
+</html>
